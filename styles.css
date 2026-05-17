@@ -97,15 +97,12 @@ img {
 }
 
 .brand-mark {
-  display: grid;
   width: 42px;
   height: 42px;
-  place-items: center;
   border: 1px solid rgba(88, 225, 255, 0.62);
   border-radius: 8px;
-  color: var(--cyan);
-  font-weight: 800;
-  background: rgba(88, 225, 255, 0.08);
+  object-fit: cover;
+  background: rgba(4, 8, 18, 0.88);
   box-shadow: inset 0 0 24px rgba(88, 225, 255, 0.16);
 }
 
@@ -198,12 +195,13 @@ p {
 }
 
 h1 {
-  max-width: 760px;
+  max-width: none;
   margin-bottom: 24px;
-  font-size: clamp(56px, 8vw, 112px);
+  font-size: clamp(56px, 6.4vw, 88px);
   line-height: 0.94;
   font-weight: 850;
   letter-spacing: 0;
+  white-space: nowrap;
   text-shadow: 0 0 34px rgba(88, 225, 255, 0.28);
 }
 
