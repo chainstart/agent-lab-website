@@ -37,4 +37,11 @@ jobs:
         run: vercel pull --yes --environment=production
 
       - name: Deploy production
-        run: vercel deploy --prod --yes
+        run: |
+          set -euo pipefail
+          vercel deploy --prod --yes 2>&1 | tee deployment.log
+          deployment_url="$(grep -Eo 'https://[^[:space:]]+\.vercel\.app' deployment.log | tail -n 1)"
+          test -n "$deployment_url"
+          echo "Deployment URL: $deployment_url"
+          vercel alias set "$deployment_url" bitres.org
+          vercel alias set "$deployment_url" www.bitres.org
