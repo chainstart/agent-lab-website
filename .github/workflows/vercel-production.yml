@@ -16,6 +16,7 @@ jobs:
     env:
       VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
       VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+      VERCEL_SCOPE: invariant-cores-projects
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -29,19 +30,20 @@ jobs:
         run: |
           mkdir -p "$HOME/.local/share/com.vercel.cli"
           printf '%s' '${{ secrets.VERCEL_AUTH_JSON }}' > "$HOME/.local/share/com.vercel.cli/auth.json"
+          printf '{"currentTeam":"%s"}\n' "$VERCEL_ORG_ID" > "$HOME/.local/share/com.vercel.cli/config.json"
 
       - name: Install Vercel CLI
         run: npm install --global vercel@50.1.3
 
       - name: Pull Vercel project settings
-        run: vercel pull --yes --environment=production
+        run: vercel pull --yes --environment=production --scope "$VERCEL_SCOPE"
 
       - name: Deploy production
         run: |
           set -euo pipefail
-          vercel deploy --prod --yes 2>&1 | tee deployment.log
-          deployment_url="$(grep -Eo 'https://[^[:space:]]+\.vercel\.app' deployment.log | tail -n 1)"
+          vercel deploy --prod --yes --scope "$VERCEL_SCOPE" 2>&1 | tee deployment.log
+          deployment_url="$(awk '/Production: https:\/\// {print $2}' deployment.log | tail -n 1)"
           test -n "$deployment_url"
           echo "Deployment URL: $deployment_url"
-          vercel alias set "$deployment_url" bitres.org
-          vercel alias set "$deployment_url" www.bitres.org
+          vercel alias set "$deployment_url" bitres.org --scope "$VERCEL_SCOPE"
+          vercel alias set "$deployment_url" www.bitres.org --scope "$VERCEL_SCOPE"
