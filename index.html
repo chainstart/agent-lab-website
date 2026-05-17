@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>智能体实验室 | 上海电机学院人工智能学院</title>
+    <meta
+      name="description"
+      content="上海电机学院人工智能学院智能体实验室，面向智能体系统、AI4S、工程智能体、科研智能体与区块链安全开展研究与开发。"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23050812'/%3E%3Cpath d='M16 42 28 18h8l12 24h-7l-2.4-5.4H25.4L23 42h-7Zm12-11h8l-4-9-4 9Z' fill='%2358e1ff'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="agent-field" aria-hidden="true"></canvas>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#top" aria-label="智能体实验室首页">
+          <span class="brand-mark">AL</span>
+          <span>
+            <strong>Agent Lab</strong>
+            <small>SDJU Artificial Intelligence</small>
+          </span>
+        </a>
+        <nav class="nav-links" aria-label="主导航">
+          <a href="#mission">使命</a>
+          <a href="#research">方向</a>
+          <a href="#projects">项目</a>
+          <a href="#team">团队</a>
+          <a href="#contact">联系</a>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="hero section-band">
+          <div class="hero-copy">
+            <p class="eyebrow">上海电机学院人工智能学院</p>
+            <h1>智能体实验室</h1>
+            <p class="hero-lede">
+              面向 AI 时代的自主协同系统，研究智能体的感知、规划、工具调用、工程执行与安全治理，
+              将大模型能力转化为可验证、可部署、可协作的智能系统。
+            </p>
+            <div class="hero-actions">
+              <a class="primary-action" href="#projects">查看项目矩阵</a>
+              <a class="secondary-action" href="#team">认识团队</a>
+            </div>
+            <div class="signal-row" aria-label="实验室关键词">
+              <span>AI Agent</span>
+              <span>AI4S</span>
+              <span>Engineering Harness</span>
+              <span>Blockchain Security</span>
+            </div>
+          </div>
+
+          <div class="orbital-panel" aria-label="智能体系统示意">
+            <div class="orbital-core">
+              <span class="core-pulse"></span>
+              <strong>Agent Core</strong>
+              <small>Plan · Act · Verify</small>
+            </div>
+            <div class="orbit orbit-a"><span>Tool</span></div>
+            <div class="orbit orbit-b"><span>Memory</span></div>
+            <div class="orbit orbit-c"><span>Safety</span></div>
+            <div class="telemetry">
+              <p>context stream</p>
+              <p>tool calls synchronized</p>
+              <p>human aligned execution</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="mission" class="section-band mission-grid">
+          <div>
+            <p class="eyebrow">Lab Mission</p>
+            <h2>让智能体从“会回答”走向“能完成任务”</h2>
+          </div>
+          <div class="mission-copy">
+            <p>
+              实验室关注大模型智能体的系统化研发：将任务理解、计划生成、工具调用、代码执行、知识记忆、
+              结果验证和人机协同整合为可复用的工程框架。
+            </p>
+            <p>
+              我们鼓励学生在真实项目中学习智能体开发方法，以科研、教学、软件工程、金融分析和安全审计为应用场景，
+              建设可运行、可评测、可持续迭代的 AI 原型系统。
+            </p>
+          </div>
+        </section>
+
+        <section id="research" class="section-band">
+          <div class="section-heading">
+            <p class="eyebrow">Research Directions</p>
+            <h2>研究方向</h2>
+          </div>
+          <div class="research-grid">
+            <article class="research-card">
+              <span class="card-index">01</span>
+              <h3>智能体系统研发</h3>
+              <p>围绕任务规划、工具调用、上下文管理、长程执行和自动评测，构建面向复杂任务的 Agent 架构。</p>
+            </article>
+            <article class="research-card">
+              <span class="card-index">02</span>
+              <h3>智能科研与 AI4S</h3>
+              <p>探索服务科研的 AI Agent 系统，支持文献理解、实验设计、数据分析、论文生成与科研流程自动化。</p>
+            </article>
+            <article class="research-card">
+              <span class="card-index">03</span>
+              <h3>工程智能体与开发工具</h3>
+              <p>研究 AI coding、工程 harness、自动测试与部署，让智能体在软件工程链路中稳定协作。</p>
+            </article>
+            <article class="research-card">
+              <span class="card-index">04</span>
+              <h3>区块链安全与形式化审计</h3>
+              <p>结合链上数据分析、智能合约审计、形式化验证和安全智能体，提升复杂系统风险发现能力。</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="projects" class="section-band">
+          <div class="section-heading split-heading">
+            <div>
+              <p class="eyebrow">Project Matrix</p>
+              <h2>项目矩阵</h2>
+            </div>
+            <p>
+              基于本地项目目录整理，展示实验室当前可延展的研发主题。每个项目都强调从原型走向可运行系统。
+            </p>
+          </div>
+          <div class="project-grid">
+            <article class="project-card featured">
+              <p class="project-tag">智能科研</p>
+              <h3>Auto Research Agent</h3>
+              <p>面向科研流程的自动化智能体，覆盖选题、资料检索、论文草拟、质量检查与报告生成。</p>
+              <span>research · paper · automation</span>
+            </article>
+            <article class="project-card">
+              <p class="project-tag">工程智能体</p>
+              <h3>Engineering Harness</h3>
+              <p>面向自动化工程执行的生命周期框架，关注目标拆解、策略控制、工具使用和验证闭环。</p>
+              <span>planning · execution · verification</span>
+            </article>
+            <article class="project-card">
+              <p class="project-tag">论文智能体</p>
+              <h3>Thesis Agent</h3>
+              <p>支持毕业论文、教学材料和规范文档的结构化生成、质量约束和格式回环检查。</p>
+              <span>document · quality · ooxml</span>
+            </article>
+            <article class="project-card">
+              <p class="project-tag">金融智能体</p>
+              <h3>Open Financial Agents</h3>
+              <p>探索金融研究、市场分析、投研报告和多智能体任务协作，连接数据、模型和决策流程。</p>
+              <span>finance · analysis · multi-agent</span>
+            </article>
+            <article class="project-card">
+              <p class="project-tag">安全智能体</p>
+              <h3>Blockchain Security</h3>
+              <p>面向智能合约、DeFi 攻击复盘、链上数据和形式化审计的安全分析工作流。</p>
+              <span>audit · formal methods · on-chain</span>
+            </article>
+            <article class="project-card">
+              <p class="project-tag">教学创新</p>
+              <h3>智能体微专业与 AI 课程</h3>
+              <p>将智能体开发、AI coding、课程项目和工程实践融入人才培养，形成可复用教学资源。</p>
+              <span>education · ai coding · curriculum</span>
+            </article>
+          </div>
+        </section>
+
+        <section id="team" class="section-band">
+          <div class="section-heading">
+            <p class="eyebrow">Team</p>
+            <h2>团队介绍</h2>
+          </div>
+
+          <article class="leader-panel">
+            <div class="leader-photo-wrap">
+              <img src="assets/chen-zhipeng.png" alt="陈智鹏" class="leader-photo" />
+            </div>
+            <div class="leader-copy">
+              <p class="eyebrow">负责人</p>
+              <h3>陈智鹏</h3>
+              <p class="leader-title">博士 · 讲师 · 硕士生导师</p>
+              <p>
+                主要从事人工智能应用研究，包括 AI4S、智能科研系统研发、AI Agent 系统研发；
+                同时关注区块链安全、形式化审计和链上攻击分析。
+              </p>
+              <div class="leader-tags">
+                <span>AI Agent</span>
+                <span>AI4S</span>
+                <span>智能科研系统</span>
+                <span>区块链安全</span>
+              </div>
+              <a href="https://sei.sdju.edu.cn/2024/0419/c4511a131110/page.htm" target="_blank" rel="noreferrer">
+                查看公开主页
+              </a>
+            </div>
+          </article>
+
+          <div class="student-section">
+            <div class="student-group">
+              <h3>研究生</h3>
+              <div class="member-grid">
+                <article class="member-card">
+                  <h4>唐浩伦</h4>
+                  <p>参与智能体系统原型、工具调用流程和工程验证工作，关注从任务规划到结果评测的闭环。</p>
+                </article>
+                <article class="member-card">
+                  <h4>詹静怡</h4>
+                  <p>参与科研智能体、论文材料处理和人机协同界面设计，关注智能体输出质量与可解释呈现。</p>
+                </article>
+                <article class="member-card">
+                  <h4>王琪盛</h4>
+                  <p>参与安全智能体、链上数据分析和自动化审计流程建设，关注复杂系统风险识别。</p>
+                </article>
+              </div>
+            </div>
+
+            <div class="student-group">
+              <h3>本科生</h3>
+              <div class="member-grid compact">
+                <article class="member-card"><h4>谭茉曦</h4><p>参与网站、文档与智能体应用体验设计。</p></article>
+                <article class="member-card"><h4>陈天乐</h4><p>参与 AI coding 实践、小应用原型与工具链调研。</p></article>
+                <article class="member-card"><h4>梁敬义</h4><p>参与智能体项目测试、数据整理和部署演示。</p></article>
+                <article class="member-card"><h4>覃海杰</h4><p>参与工程智能体脚本、实验记录和评测流程。</p></article>
+                <article class="member-card"><h4>赵乾睿</h4><p>参与区块链安全材料整理和案例复盘。</p></article>
+                <article class="member-card"><h4>李子墨</h4><p>参与科研资料结构化、项目报告和知识库建设。</p></article>
+                <article class="member-card"><h4>韦子阳</h4><p>参与智能体前端交互、可视化与演示页面。</p></article>
+                <article class="member-card"><h4>夏心龙</h4><p>参与硬件仿真、工程实验和课程项目原型。</p></article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="section-band contact-band">
+          <div>
+            <p class="eyebrow">Contact</p>
+            <h2>加入下一代智能体系统的构建</h2>
+            <p>
+              欢迎对大模型智能体、科研自动化、AI coding、区块链安全和工程实践感兴趣的同学参与实验室项目。
+            </p>
+          </div>
+          <div class="contact-card">
+            <span>负责人邮箱</span>
+            <a href="mailto:chenzhipeng@sdju.edu.cn">chenzhipeng@sdju.edu.cn</a>
+            <span>单位</span>
+            <strong>上海电机学院人工智能学院</strong>
+            <span>地址</span>
+            <strong>上海市浦东新区水华路 300 号</strong>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>© 2026 智能体实验室 · 上海电机学院人工智能学院</p>
+        <p>Agent Lab for research, engineering, and trustworthy autonomous systems.</p>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
